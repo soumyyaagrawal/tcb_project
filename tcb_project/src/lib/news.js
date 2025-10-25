@@ -1,7 +1,7 @@
 // lib/news.js
 export async function fetchNews() {
     const res = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_API_KEY}`
+      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.OPENAI_API_KEY}`
     )
     const data = await res.json()
   
