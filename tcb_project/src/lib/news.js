@@ -9,6 +9,7 @@ export async function fetchNews() {
       title: article.title,
       description: article.description,
       url: article.url,
+      content: article.content,
       imageUrl: article.urlToImage,
       source: article.source?.name,
       publishedAt: article.publishedAt

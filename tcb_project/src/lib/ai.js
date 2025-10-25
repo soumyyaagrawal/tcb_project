@@ -1,9 +1,13 @@
 // lib/ai.js
-import OpenAI from 'openai'
+  import OpenAI from 'openai'
+import { fetchNews } from '@/lib/news'
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
 
 export async function summarize(text) {
+ 
+  
+
   if (!text) return "No summary available."
 
   const prompt = `Summarize this news article in easy words in 2 lines:\n\n${text}`
