@@ -8,6 +8,17 @@ export default async function Home() {
    console.log("OPENAI KEY:")
    console.log("OPENAI KEY:", process.env.OPENAI_API_KEY)
   const articles = await fetchNews()
+
+  const handleSummarize = async (text) => {
+    const res = await fetch('/api/summarize', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
+    })
+    const data = await res.json()
+    console.log('Summary:', data.summary)
+    alert(data.summary) // or update state to show in UI
+  }
  
 
 
@@ -17,7 +28,7 @@ export default async function Home() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {articles.map(article => (
-          <div key={article.id} className="bg-gray-200 shadow p-4 rounded-xl">
+          <div className="bg-gray-200 shadow p-4 rounded-xl">
             <img
               src={article.imageUrl}
               alt={article.title}
@@ -32,7 +43,7 @@ export default async function Home() {
             >
               Read full 
             </a> 
-            <div onClick={() => summarize(article.content || article.description || article.title)} className="text-gray-500 text-sm mt-2 bg-gray-200 shadow p-1 rounded-xl">
+            <div onClick={() => handleSummarize(article.content || article.description || article.title)} className="text-gray-500 text-sm mt-2 bg-gray-200 shadow p-1 rounded-xl">
              summarize  
             </div>
           </div>
