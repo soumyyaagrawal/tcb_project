@@ -1,11 +1,8 @@
 // app/page.js
 'use client';
-import prisma from '@/lib/prisma'
-import { fetchNews } from '@/lib/news'
+// import prisma from '@/lib/prisma'
 
-export default async function Client() {
-   
-  const articles = await fetchNews()
+export default function Client({ articles }) {
 
   const handleSummarize = async (text) => {
     const res = await fetch('/api/summarize', {

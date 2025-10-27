@@ -1,11 +1,15 @@
-// app/page.js
+import { getArticlesFromDB, syncNews } from '@/lib/news';
+import Client from '@/app/client.js';
 
-import prisma from '@/lib/prisma'
-import { fetchNews } from '@/lib/news'
-import { summarize } from '@/lib/ai'
-import Client from '@/app/client'
-
+// This is the default export for the page
 export default async function Home() {
-   
-  return <Client />
+  
+  
+  await syncNews();
+
+  
+  const articles = await getArticlesFromDB();
+
+  // 3. Pass the articles array down as a prop to the Client Component.
+  return <Client articles={articles} />;
 }

@@ -10,14 +10,14 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://neondb_owner:npg_1XHFoDkAaqt6@ep-autumn-hall-a1ncvdcp-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 }
 
 model Article {
   id          Int      @id @default(autoincrement())
   title       String
   description String?
-  url         String
+  url         String  @unique 
   imageUrl    String?
   source      String?
   publishedAt DateTime

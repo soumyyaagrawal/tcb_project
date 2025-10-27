@@ -22,11 +22,11 @@ export async function POST(req) {
 
   try {
     const response = await client.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: prompt }],
     })
     const summary = response.choices[0].message.content
-    return NextResponse.json({ summary })
+    return NextResponse.json({ summary: summary })
 
   } catch (error) {
     console.error("OpenAI API Error:", error)
