@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// next.config.mjs
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Add this property to explicitly pass the env variable
+ 
+}
+
+// ✅ CORRECT SYNTAX for .mjs file
+export default nextConfig
