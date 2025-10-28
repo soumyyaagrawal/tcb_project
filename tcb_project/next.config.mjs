@@ -20,9 +20,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  env: {
-        NEWS_INSIGHTS_GEMINI_KEY: process.env.NEWS_INSIGHTS_GEMINI_KEY,
-      },
+  
  
 }
 
