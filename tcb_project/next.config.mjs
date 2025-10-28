@@ -21,7 +21,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   env: {
-        GEMINI_API_KEY: process.env.GEMINI_API_KEY,
+        NEWS_INSIGHTS_GEMINI_KEY: process.env.NEWS_INSIGHTS_GEMINI_KEY,
       },
  
 }

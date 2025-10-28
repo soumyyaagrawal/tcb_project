@@ -8,7 +8,7 @@ export async function POST(req) {
 
     // 2. Define API key and endpoint (Read from environment variable)
     // IMPORTANT: Make sure this variable is defined in your .env.local
-    const apiKey = process.env.GEMINI_API_KEY; 
+    const apiKey = process.env.NEWS_INSIGHTS_GEMINI_KEY; 
     const model = 'gemini-2.5-flash-preview-09-2025';
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
