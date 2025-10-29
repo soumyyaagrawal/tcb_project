@@ -27,7 +27,13 @@ export default function Client({ articles }) {
   
 
   return (
-    <main className="min-h-screen p-10 bg-gray-200">
+    <main className="relative min-h-screen flex items-center justify-center bg-gray-100 overflow-hidden flex-wrap p-8">
+
+//blobs
+  <div class="absolute top-0 left-0 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>
+  <div class="absolute top-1/2 right-1/2 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+  <div class="absolute bottom-0 left-1/2 w-72 h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+
       <h1 className="text-purple-700 text-3xl font-bold mb-6">
         <span className="bg-gradient-to-r from-purple-700 via-purple-500 to-purple-400 text-transparent bg-clip-text">
           InsightDigest
@@ -50,13 +56,13 @@ export default function Client({ articles }) {
               className="text-blue-900 mt-2 inline-block"
             >
               Read full 
-            </a> 
-            <div
+            </a> <br/>
+            <button
               onClick={() => handleSummarize(article.content || article.description || article.title)}
-              className="text-gray-900 text-md text-center mt-2 p-2 bg-gray-200 shadow p-1 rounded-xl cursor-pointer"
+              className="   w-[345px] text-gray-900 text-md text-center mt-2 p-2 bg-gray-200 shadow p-1 rounded-xl cursor-pointer"
             >
               summarize  
-            </div>
+            </button>
           </div>
         ))}
       </div>
